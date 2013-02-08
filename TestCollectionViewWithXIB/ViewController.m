@@ -35,8 +35,15 @@
     MyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
     cell.cellLabel.text = [NSString stringWithFormat:@"cell %i",indexPath.row];
     return cell;
-    
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    MyCell *cell = (MyCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    NSArray *views = [cell.contentView subviews];
+    UILabel *label = [views objectAtIndex:0];
+    NSLog(@"Select %@",label.text);
+}
+
 
 
 @end

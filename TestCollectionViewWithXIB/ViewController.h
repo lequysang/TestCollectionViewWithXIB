@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MyCell.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
